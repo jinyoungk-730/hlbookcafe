@@ -355,13 +355,14 @@ body{margin:0;padding:20px;background:#e8e8e8;display:flex;align-items:flex-star
 .badge-summary .bs-box{flex:1;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;padding:12px;text-align:center}
 .badge-summary .bs-box p{font-size:20px;font-weight:900;color:var(--color-text-primary)}
 .badge-summary .bs-box span{font-size:11px;color:var(--color-text-tertiary)}
-.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:8px}
+.bgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:8px}
 .bgrid .bcard{width:auto;flex-shrink:1}
-.bcard{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:12px;padding:14px 10px;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
-.bcard .bcard-ico{width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,#FFF4E5,#FFE8CC);display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:8px}
-.bcard .bcard-name{font-size:12px;font-weight:700;color:var(--color-text-primary);margin-bottom:3px}
-.bcard .bcard-desc{font-size:10px;color:var(--color-text-secondary);line-height:1.4;margin-bottom:7px;min-height:28px}
-.bcard .bcard-date{font-size:9px;color:var(--red);font-weight:600}
+.bcard{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:14px;padding:18px 12px 14px;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);transition:transform .12s,box-shadow .12s,border-color .12s}
+.bgrid .bcard:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,0.08);border-color:#FECACA}
+.bcard .bcard-ico{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,#FFF4E5,#FFE8CC);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:10px}
+.bcard .bcard-name{font-size:13px;font-weight:800;color:var(--color-text-primary);margin-bottom:4px}
+.bcard .bcard-desc{font-size:10.5px;color:var(--color-text-secondary);line-height:1.5;margin-bottom:12px;flex:1 0 auto;display:flex;align-items:center}
+.bcard .bcard-date{font-size:10px;color:var(--red);font-weight:700;margin-top:auto}
 .bcard.locked{background:var(--color-background-secondary);box-shadow:none}
 .bcard.locked .bcard-ico{background:var(--color-background-tertiary);filter:grayscale(1);opacity:.55}
 .bcard.locked .bcard-name,.bcard.locked .bcard-desc{opacity:.6}
@@ -511,6 +512,85 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
 .report-ico i{font-size:16px;color:#059669}
 .report-txt p{font-size:11px;font-weight:700;color:#065F46;margin-bottom:1px}
 .report-txt span{font-size:10px;color:#059669}
+
+/* ===== 장르별 독서목록 (서브 카테고리 필터) ===== */
+.cat-lnb-label{font-size:10px;font-weight:700;color:var(--color-text-tertiary);letter-spacing:.02em;padding:2px 16px 8px;text-transform:none}
+.genre-subbar{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px;padding-bottom:13px;border-bottom:1px solid var(--color-border-tertiary)}
+.gchip{font-family:inherit;font-size:11.5px;font-weight:600;color:var(--color-text-secondary);background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:6px 13px;cursor:pointer;transition:all .12s;white-space:nowrap}
+.gchip:hover{background:#fff;border-color:var(--color-border-secondary)}
+.gchip.on{background:var(--red);color:#fff;border-color:var(--red);box-shadow:0 2px 6px rgba(226,75,74,0.25)}
+
+/* ===== 독서 성장 대시보드 v38 (좌: 프로필·뱃지·취향 / 우: 분석) ===== */
+.shelf-layout{display:grid;grid-template-columns:252px 1fr;gap:18px;align-items:start}
+.dash-left{display:flex;flex-direction:column;gap:12px}
+.lcard{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:14px;padding:13px 14px}
+.stat-row2.clickable{cursor:pointer;border-radius:7px;margin:0 -6px;padding:3px 6px;transition:background .12s}
+.stat-row2.clickable:hover{background:var(--color-background-secondary)}
+.badges .badge-ico.locked{opacity:.35}
+.badge-count{margin-top:10px;font-size:10px;color:var(--color-text-tertiary)}
+.badge-count b{color:var(--color-text-secondary);font-weight:800}
+.taste-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(135deg,#7E22CE,#A855F7);color:#fff;font-family:inherit;font-size:12px;font-weight:700;border:none;border-radius:10px;padding:11px 16px;cursor:pointer;box-shadow:0 3px 10px rgba(126,34,206,0.25);white-space:nowrap}
+.taste-cta:hover{filter:brightness(1.06)}
+.taste-cta i{font-size:15px}
+.taste-cta.full{width:100%}
+.taste-redo{display:inline-flex;align-items:center;gap:4px;margin-top:9px;width:100%;justify-content:center;background:#FAF5FF;border:0.5px solid #E9D5FF;border-radius:8px;padding:7px;font-family:inherit;font-size:11px;font-weight:700;color:#7E22CE;cursor:pointer}
+.taste-redo:hover{background:#F3E8FF}
+
+.dash-right{min-width:0}
+.da-row2{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.da-card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:14px;padding:14px}
+.da-card.da-eval{background:linear-gradient(135deg,#FAF5FF,#F3E8FF);border-color:#E9D5FF}
+.da-eval-hd{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.da-eval-ico{width:34px;height:34px;border-radius:10px;background:#7E22CE;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.da-eval-hd p{font-size:13.5px;font-weight:900;color:#6B21A8;line-height:1.2}
+.da-eval-hd span{font-size:9.5px;color:#9333EA}
+.da-eval-body{font-size:11px;color:#581C87;line-height:1.7;margin-bottom:12px}
+.da-eval-label{font-size:10px;font-weight:700;color:#9333EA;display:block;margin-bottom:7px}
+.da-hd{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:800;color:var(--color-text-primary);margin-bottom:11px}
+.da-hd i{font-size:15px;color:var(--red)}
+.da-hd .da-more{margin-left:auto;font-size:10px;font-weight:600;color:#1565C0;cursor:pointer}
+.da-hd .da-more:hover{text-decoration:underline}
+.radar-wrap{background:var(--color-background-secondary);border-radius:12px;padding:6px 10px 2px}
+.da-foot{font-size:10px;color:var(--color-text-tertiary);line-height:1.6;margin-top:10px}
+.road-hist-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.road-hist-grid .road-hist-item{margin-bottom:0}
+.dash-books{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+/* ===== 이달의 목표 카드 + 설정 팝업 ===== */
+.goal-card-btn{display:flex;align-items:center;gap:11px;width:100%;background:linear-gradient(135deg,#FFF7F7,#FFFBFB);border:0.5px solid #FBD5D3;border-radius:11px;padding:11px 12px;cursor:pointer;font-family:inherit;transition:all .12s}
+.goal-card-btn:hover{border-color:var(--red);box-shadow:0 3px 10px rgba(226,75,74,0.12)}
+.goal-card-btn .gcb-info{flex:1;min-width:0;text-align:left}
+.goal-card-btn .gcb-info p{font-size:15px;font-weight:900;color:var(--color-text-primary);line-height:1.1}
+.goal-card-btn .gcb-info p b{color:var(--red)}
+.goal-card-btn .gcb-info span{font-size:10px;color:var(--color-text-secondary)}
+.goal-card-btn .gcb-edit{display:inline-flex;align-items:center;gap:3px;font-size:10px;font-weight:700;color:var(--red);background:#FFF;border:0.5px solid #FBD5D3;border-radius:7px;padding:5px 9px;flex-shrink:0}
+.goal-card-btn .gcb-edit i{font-size:13px}
+
+.goal-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:600;align-items:center;justify-content:center;padding:20px}
+.goal-modal-box{position:relative;width:340px;max-width:100%;background:var(--color-background-primary);border-radius:18px;box-shadow:0 18px 50px rgba(0,0,0,.28);padding:22px 22px 18px;font-family:inherit}
+.goal-modal-x{position:absolute;top:13px;right:13px;width:28px;height:28px;border-radius:50%;background:var(--color-background-secondary);border:none;color:var(--color-text-tertiary);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px}
+.goal-modal-x:hover{background:var(--color-background-tertiary)}
+.gm-head{display:flex;align-items:center;gap:11px;margin-bottom:18px}
+.gm-ico{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#FFE9E9,#FFD9D7);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.gm-title{font-size:16px;font-weight:900;color:var(--color-text-primary);line-height:1.2}
+.gm-sub{font-size:11px;color:var(--color-text-secondary)}
+.gm-stepper{display:flex;align-items:center;justify-content:center;gap:18px;margin-bottom:14px}
+.gm-step{width:42px;height:42px;border-radius:12px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .12s}
+.gm-step:hover{background:#FEF2F2;border-color:var(--red);color:var(--red)}
+.gm-value{min-width:96px;text-align:center;display:flex;align-items:baseline;justify-content:center;gap:3px}
+.gm-value b{font-size:38px;font-weight:900;color:var(--red);line-height:1}
+.gm-value span{font-size:15px;font-weight:700;color:var(--color-text-secondary)}
+.gm-presets{display:flex;gap:6px;justify-content:center;margin-bottom:16px}
+.gm-presets button{flex:1;font-family:inherit;font-size:11px;font-weight:700;color:var(--color-text-secondary);background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:8px;padding:8px 0;cursor:pointer;transition:all .12s}
+.gm-presets button:hover{background:#fff;border-color:var(--color-border-secondary)}
+.gm-presets button.on{background:var(--red);color:#fff;border-color:var(--red)}
+.gm-note{display:flex;align-items:center;gap:5px;justify-content:center;font-size:11px;color:var(--color-text-secondary);background:var(--color-background-secondary);border-radius:9px;padding:9px;margin-bottom:16px}
+.gm-note b{color:var(--color-text-primary);font-weight:800}
+.gm-actions{display:flex;gap:8px}
+.gm-cancel{flex:0 0 auto;padding:11px 18px;font-family:inherit;font-size:13px;font-weight:700;color:var(--color-text-secondary);background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:10px;cursor:pointer}
+.gm-cancel:hover{background:var(--color-background-tertiary)}
+.gm-save{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:5px;padding:11px;font-family:inherit;font-size:13px;font-weight:800;color:#fff;background:var(--red);border:none;border-radius:10px;cursor:pointer;box-shadow:0 3px 10px rgba(226,75,74,.25)}
+.gm-save:hover{filter:brightness(1.05)}
 </style>
 </head>
 <body>
@@ -534,13 +614,13 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
             <div class="card goal-card">
               <svg width="46" height="46" viewBox="0 0 46 46" style="flex-shrink:0">
                 <circle cx="23" cy="23" r="18" fill="none" stroke="var(--color-border-tertiary)" stroke-width="4"/>
-                <circle cx="23" cy="23" r="18" fill="none" stroke="#E24B4A" stroke-width="4" stroke-dasharray="113.1" stroke-dashoffset="75.8" stroke-linecap="round" transform="rotate(-90 23 23)"/>
-                <text x="23" y="27" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text-primary)">33%</text>
+                <circle id="home-goal-ring" cx="23" cy="23" r="18" fill="none" stroke="#E24B4A" stroke-width="4" stroke-dasharray="113.1" stroke-dashoffset="75.8" stroke-linecap="round" transform="rotate(-90 23 23)"/>
+                <text id="home-goal-pct" x="23" y="27" text-anchor="middle" font-size="9" font-weight="700" fill="var(--color-text-primary)">33%</text>
               </svg>
               <div class="goal-info">
-                <p>이달의 독서 목표: 3권</p>
-                <span>1권 완독 · 2권 남음</span>
-                <div class="pbar"><div class="pbar-fill" style="width:33%"></div></div>
+                <p id="home-goal-title">이달의 독서 목표: 3권</p>
+                <span id="home-goal-sub">1권 완독 · 2권 남음</span>
+                <div class="pbar"><div class="pbar-fill" id="home-goal-bar" style="width:33%"></div></div>
               </div>
             </div>
 
@@ -627,22 +707,60 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
     <div id="v1" class="view">
       <div class="booklist-layout">
         <div class="cat-lnb">
-          <div class="cat-item on" onclick="catClick(this,'booklist-main')"><i class="ti ti-layout-grid"></i>전체</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-books"></i>문학/소설</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-globe"></i>인문/교양</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-clock"></i>역사/인물</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-building-bank"></i>사회/경제</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-calculator"></i>수학/과학</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-brush"></i>문화/예술</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-device-tv"></i>그림/만화</div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')"><i class="ti ti-info-circle"></i>백과/상식</div>
+          <div class="cat-lnb-label">장르별 독서목록</div>
+          <div class="cat-item on" onclick="selectBig(this,'all')"><i class="ti ti-layout-grid"></i>전체</div>
+          <div class="cat-item" onclick="selectBig(this,'lit')"><i class="ti ti-books"></i>그림/문학</div>
+          <div class="cat-item" onclick="selectBig(this,'hum')"><i class="ti ti-bulb"></i>인문/교양</div>
+          <div class="cat-item" onclick="selectBig(this,'his')"><i class="ti ti-clock"></i>역사/인물</div>
+          <div class="cat-item" onclick="selectBig(this,'soc')"><i class="ti ti-building-bank"></i>사회/경제</div>
+          <div class="cat-item" onclick="selectBig(this,'sci')"><i class="ti ti-calculator"></i>수학/과학</div>
+          <div class="cat-item" onclick="selectBig(this,'art')"><i class="ti ti-brush"></i>문화/예술</div>
           <div style="height:1px;background:var(--color-border-tertiary);margin:6px 14px"></div>
-          <div class="cat-item" onclick="catClick(this,'booklist-main')" style="color:#E24B4A;font-weight:700"><i class="ti ti-star" style="color:#E24B4A"></i>시리즈</div>
+          <div class="cat-item" onclick="openSeries(this)" style="color:#E24B4A;font-weight:700"><i class="ti ti-star" style="color:#E24B4A"></i>시리즈</div>
           <div class="cat-item" onclick="openAudio(this)" style="color:#1565C0;font-weight:700"><i class="ti ti-headphones" style="color:#1565C0"></i>오디오북</div>
           <div class="cat-item" onclick="openChangjak(this)" style="color:#059669;font-weight:700"><i class="ti ti-notebook" style="color:#059669"></i>홈런창작집</div>
+          <div class="cat-item" onclick="openRoad(this)" style="color:#7C3AED;font-weight:700"><i class="ti ti-route" style="color:#7C3AED"></i>독서로드</div>
         </div>
         <div class="booklist-content">
-          <!-- 기본 도서 목록 -->
+          <!-- 장르별 독서목록 (큰 카테고리 → 작은 카테고리 필터) -->
+          <div id="booklist-genre">
+            <div id="genre-subbar" class="genre-subbar"></div>
+            <div class="booklist-hd">
+              <strong id="genre-hd-title">전체</strong><span id="genre-hd-count"></span>
+              <div class="sort-sel">추천순 <i class="ti ti-chevron-down" style="font-size:10px"></i></div>
+            </div>
+            <div id="genre-grid" class="book-grid"></div>
+          </div>
+
+          <!-- 독서로드 설정 패널 -->
+          <div id="booklist-road" style="display:none">
+            <div class="road-setup" style="margin-top:0;border-top:none;padding-top:0">
+              <div class="sec-hd" style="margin-bottom:6px">
+                <strong>📚 읽고 싶은 '길'을 골라보세요</strong>
+                <span id="road-active-label" class="road-active-badge" style="display:none"></span>
+              </div>
+              <p style="font-size:11px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:16px">길을 선택하면 <strong style="color:#1565C0">홈 화면의 '독서로드'</strong>에 저학년부터 고학년 순서로 바로 반영돼요. 설정 이력은 <strong>내 서재 › 독서 성장 대시보드</strong>에서 확인할 수 있어요.</p>
+              <div class="road-dd-row">
+                <div class="road-dd-field">
+                  <label>독서 로드 (분야의 길)</label>
+                  <div class="road-dd-wrap">
+                    <select id="road-type-select" onchange="onRoadTypeChange()">
+                      <option value="">길을 선택하세요</option>
+                      <option value="literature">📖 문학길 — 그림동화부터 고전문학까지</option>
+                      <option value="science">🔬 과학길 — 자연 관찰부터 과학사까지</option>
+                      <option value="economy">💰 경제길 — 용돈부터 경제 개념까지</option>
+                      <option value="history">🏛️ 역사길 — 옛이야기부터 세계사까지</option>
+                      <option value="art">🎨 예술길 — 색깔놀이부터 예술사까지</option>
+                      <option value="computer">💻 컴퓨터길 — 컴퓨터 첫걸음부터 인공지능까지</option>
+                    </select>
+                    <i class="ti ti-chevron-down"></i>
+                  </div>
+                </div>
+              </div>
+              <div id="road-config-area"></div>
+            </div>
+          </div>
+
           <!-- 오디오북 패널 -->
           <div id="booklist-audio" style="display:none">
           <div class="booklist-hd"><strong><i class="ti ti-headphones" style="font-size:14px;color:#1565C0"></i> 오디오북</strong><span>총 120권</span></div>
@@ -657,9 +775,9 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
             <div class="bg-item" onclick="openIntro()"><div class="bg-cover"><span class="abadge">🎧 오디오북</span>⛵</div><p>역사로 통하는 맛의 항해</p><span>역사·문화</span><div class="meta"><span><i class="ti ti-headphones"></i>듣기</span></div></div>
           </div>
           </div>
-          <div id="booklist-main">
+          <div id="booklist-main" style="display:none">
           <div class="booklist-hd">
-            <strong>전체</strong><span>총 700권</span>
+            <strong id="booklist-main-title">시리즈</strong><span>총 700권</span>
             <div class="sort-sel">추천순 <i class="ti ti-chevron-down" style="font-size:10px"></i></div>
           </div>
           <div class="book-grid">
@@ -1289,7 +1407,7 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
             </div>
             <div class="pfoot">
               <span style="font-size:10px;color:var(--color-text-tertiary)">6월 1일</span>
-              <button style="background:var(--red);border:none;border-radius:6px;padding:4px 11px;font-size:11px;color:#fff;cursor:pointer;font-family:inherit;margin-left:auto;display:flex;align-items:center;gap:4px"><i class="ti ti-edit" style="font-size:12px"></i> 수정하기</button>
+              <button onclick="editHiddenPost()" style="background:var(--red);border:none;border-radius:6px;padding:4px 11px;font-size:11px;color:#fff;cursor:pointer;font-family:inherit;margin-left:auto;display:flex;align-items:center;gap:4px"><i class="ti ti-edit" style="font-size:12px"></i> 수정하기</button>
             </div>
           </div>
           <div class="pcard">
@@ -1303,6 +1421,84 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
           </div>
         </div>
       </div>
+
+      <!-- 미노출 글 수정 화면 -->
+      <div id="c-edit" class="scroll" style="display:none">
+        <button onclick="showCreate('mine',document.querySelectorAll('#create-subtabs .stab')[1])" style="display:flex;align-items:center;gap:5px;background:transparent;border:none;font-size:11px;color:var(--color-text-tertiary);cursor:pointer;font-family:inherit;padding:0;margin-bottom:14px"><i class="ti ti-arrow-left" style="font-size:14px"></i>나의 글모음으로</button>
+
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+          <span style="font-size:11px;background:#FFF5F5;color:#E24B4A;padding:3px 9px;border-radius:5px;font-weight:700"><i class="ti ti-eye-off" style="font-size:12px"></i> 미노출</span>
+          <strong style="font-size:16px;font-weight:900;color:var(--color-text-primary)">글 수정하기</strong>
+        </div>
+
+        <!-- 미노출 사유 -->
+        <div style="display:flex;gap:8px;background:#FFF5F5;border:0.5px solid #FECACA;border-radius:10px;padding:11px 14px;margin-bottom:18px;max-width:760px">
+          <i class="ti ti-info-circle" style="font-size:15px;color:#E24B4A;flex-shrink:0;margin-top:1px"></i>
+          <div style="font-size:11px;color:#991B1B;line-height:1.65"><strong>미노출 사유</strong><br>창작 주제와 맞지 않는 내용(의미 없는 반복·채팅식 표현)이 포함되어 있어요. 아래에서 내용을 다듬어 다시 제출해 주세요.</div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 300px;gap:18px;max-width:1000px">
+          <div>
+            <div class="sec-hd" style="margin-bottom:12px"><strong>내 글 다듬기</strong></div>
+            <div style="display:flex;gap:8px;margin-bottom:14px">
+              <button class="genre-btn" data-genre="novel" onclick="editSelectGenre(this)">📖 소설</button>
+              <button class="genre-btn" data-genre="essay" onclick="editSelectGenre(this)">✍️ 수필</button>
+              <button class="genre-btn on" data-genre="poem" onclick="editSelectGenre(this)">🎵 시</button>
+            </div>
+            <input id="edit-title" type="text" value="하늘아 안녕" style="width:100%;border:0.5px solid var(--color-border-secondary);border-radius:8px;padding:10px 13px;font-size:13px;font-weight:700;background:var(--color-background-primary);color:var(--color-text-primary);outline:none;font-family:inherit;margin-bottom:8px">
+            <textarea id="edit-body" style="width:100%;height:240px;border:0.5px solid var(--color-border-secondary);border-radius:8px;padding:12px 13px;font-size:12px;background:var(--color-background-primary);color:var(--color-text-primary);outline:none;font-family:inherit;resize:none;line-height:1.9">하늘아 안녕
+오늘도 파랗구나
+ㅋㅋㅋ 나는 심심해
+ㅋㅋㅋㅋㅋㅋㅋㅋ</textarea>
+            <div style="display:flex;gap:8px;margin-top:10px">
+              <button onclick="showCreate('mine',document.querySelectorAll('#create-subtabs .stab')[1])" style="background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:8px;padding:9px 16px;font-size:12px;color:var(--color-text-secondary);cursor:pointer;font-family:inherit">취소</button>
+              <button class="red-btn" style="flex:1;justify-content:center" onclick="resubmitPost()"><i class="ti ti-send"></i>다시 승인 신청</button>
+            </div>
+          </div>
+          <div>
+            <div style="border:0.5px solid #FED7AA;border-radius:12px;overflow:hidden">
+              <div style="background:#FFF3E0;padding:9px 13px;border-bottom:0.5px solid #FED7AA;display:flex;align-items:center;gap:6px">
+                <i class="ti ti-bulb" style="font-size:15px;color:#E65100"></i>
+                <span style="font-size:12px;font-weight:700;color:#92400E">수정 도움말</span>
+                <span id="edit-help-genre" style="margin-left:auto;font-size:10px;font-weight:700;color:#E65100;background:#FFF;border:0.5px solid #FED7AA;border-radius:5px;padding:2px 8px">시</span>
+              </div>
+              <div id="edit-help-body" style="padding:12px 13px;display:flex;flex-direction:column;gap:9px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 다시 승인 신청 완료 화면 -->
+      <div id="c-resubmit" class="scroll" style="display:none">
+        <div style="max-width:520px;margin:40px auto 0;text-align:center">
+          <div style="width:72px;height:72px;border-radius:50%;background:#F0FDF4;border:1px solid #BBF7D0;display:flex;align-items:center;justify-content:center;font-size:36px;margin:0 auto 18px">📨</div>
+          <h2 style="font-size:19px;font-weight:900;color:var(--color-text-primary);margin-bottom:8px">승인 신청이 완료됐어요!</h2>
+          <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:24px">수정한 <strong>'하늘아 안녕'</strong> 글을 다시 제출했어요.<br>선생님(관리자) 검토 후 게시되며, 결과는 <strong>나의 글모음</strong>에서 확인할 수 있어요.</p>
+
+          <!-- 진행 단계 -->
+          <div style="display:flex;align-items:center;justify-content:center;gap:0;margin-bottom:28px">
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:96px">
+              <div style="width:34px;height:34px;border-radius:50%;background:#DCFCE7;border:1px solid #86EFAC;display:flex;align-items:center;justify-content:center;color:#059669;font-size:16px"><i class="ti ti-check"></i></div>
+              <span style="font-size:10px;font-weight:700;color:#059669">수정 완료</span>
+            </div>
+            <div style="width:46px;height:2px;background:#86EFAC;margin-bottom:20px"></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:96px">
+              <div style="width:34px;height:34px;border-radius:50%;background:#FFF3E0;border:1px solid #FED7AA;display:flex;align-items:center;justify-content:center;color:#E65100;font-size:16px"><i class="ti ti-clock"></i></div>
+              <span style="font-size:10px;font-weight:700;color:#E65100">검토중</span>
+            </div>
+            <div style="width:46px;height:2px;background:var(--color-border-tertiary);margin-bottom:20px"></div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:6px;width:96px">
+              <div style="width:34px;height:34px;border-radius:50%;background:var(--color-background-secondary);border:1px solid var(--color-border-tertiary);display:flex;align-items:center;justify-content:center;color:var(--color-text-tertiary);font-size:16px"><i class="ti ti-world"></i></div>
+              <span style="font-size:10px;font-weight:600;color:var(--color-text-tertiary)">게시</span>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:8px;justify-content:center">
+            <button onclick="showCreate('mine',document.querySelectorAll('#create-subtabs .stab')[1])" class="red-btn" style="padding:11px 22px"><i class="ti ti-arrow-left" style="font-size:14px"></i>나의 글모음으로</button>
+          </div>
+        </div>
+      </div>
+
       <div id="c-write" class="scroll" style="display:none">
         <!-- 뒤로가기 -->
         <button onclick="closeWritePanel()" style="display:flex;align-items:center;gap:5px;background:transparent;border:none;font-size:11px;color:var(--color-text-tertiary);cursor:pointer;font-family:inherit;padding:0;margin-bottom:14px"><i class="ti ti-arrow-left" style="font-size:14px"></i>피드로 돌아가기</button>
@@ -1330,6 +1526,7 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
                     <li style="font-size:10px;color:#92400E;line-height:1.5">폭력적이거나 무서운 내용, 불쾌한 표현은 넣지 않아요.</li>
                     <li style="font-size:10px;color:#92400E;line-height:1.5">개인 정보(이름, 학교, 주소 등)는 글에 포함하지 않아요.</li>
                   </ul>
+                  <div style="display:flex;gap:5px;margin-top:9px;padding-top:9px;border-top:0.5px solid #FED7AA;font-size:10px;color:#92400E;line-height:1.5"><i class="ti ti-device-floppy" style="font-size:12px;color:#E65100;flex-shrink:0;margin-top:1px"></i><span>임시저장은 <strong>최대 5개</strong>까지 가능하며, 저장 후 <strong>90일이 지나면 자동으로 삭제</strong>돼요.</span></div>
                 </div>
               </div>
             </div>
@@ -1408,11 +1605,11 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
       <div class="subtabs" id="shelf-subtabs">
         <button class="stab on" onclick="shelfTab('dashboard',this)">독서 성장 대시보드</button>
         <button class="stab" onclick="shelfTab('highlight',this)">독서 기록장</button>
-        <button class="stab" onclick="shelfTab('aptitude',this)">나의 독서 로드</button>
       </div>
       <div id="shelf-dashboard" class="scroll">
         <div class="shelf-layout">
-          <div>
+          <!-- ◀ 왼쪽: 프로필 · 완독 · 뱃지 · 취향 -->
+          <div class="dash-left">
             <div class="card profile-card">
               <div class="profile-top">
                 <div class="profile-av">문연</div>
@@ -1421,102 +1618,131 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
               <div class="muffin"><p>보유 콘</p><span>8,790</span></div>
               <div class="stat-list">
                 <div class="stat-row2"><span>이달 완독</span><strong>1권</strong></div>
-                <div class="stat-row2"><span>전체 완독</span><strong>47권</strong></div>
-                <div class="stat-row2"><span>작성한 글</span><strong>8편</strong></div>
-                <div class="stat-row2"><span>이달 목표</span><strong>3권 / 월</strong></div>
+                <div class="stat-row2 clickable" onclick="openRecent()"><span>전체 완독</span><strong>47권</strong></div>
+                <div class="stat-row2 clickable" onclick="goRecord()"><span>작성한 글</span><strong>8편</strong></div>
+                <div class="stat-row2 clickable" onclick="openGoalModal()"><span>이달 목표</span><strong id="profile-goal-stat">3권 / 월</strong></div>
               </div>
             </div>
-            <div style="margin-top:10px">
-              <div class="sec-hd" style="margin-bottom:6px"><strong>획득한 뱃지</strong><a onclick="openBadges()">더보기 ›</a></div>
-              <div class="badges"><div class="badge-ico">🏆</div><div class="badge-ico">📚</div><div class="badge-ico">✍️</div><div class="badge-ico">🌟</div><div class="badge-ico" style="opacity:.3">🔒</div></div>
+
+            <div class="lcard">
+              <div class="sec-hd" style="margin-bottom:9px"><strong>획득한 뱃지</strong><a onclick="openBadges()">더보기 ›</a></div>
+              <div class="badges">
+                <div class="badge-ico" title="첫 완독">🏆</div>
+                <div class="badge-ico" title="책벌레">📚</div>
+                <div class="badge-ico" title="기록왕">✍️</div>
+                <div class="badge-ico" title="이달의 독서왕">🌟</div>
+                <div class="badge-ico" title="7일 연속 독서">🔥</div>
+                <div class="badge-ico" title="역사 탐험가">🗺️</div>
+                <div class="badge-ico locked" title="잠금">🔒</div>
+              </div>
+              <div class="badge-count">획득 <b>8</b> · 도전 중 <b>4</b></div>
             </div>
-            <!-- 독서 취향 진단 결과 (진단 완료 시 표시) -->
-            <div id="taste-result-card" style="display:none;margin-top:14px">
-              <div class="sec-hd" style="margin-bottom:6px"><strong>나의 독서 취향</strong><a onclick="openTaste()">다시 진단 ›</a></div>
-              <div id="taste-result-card-body"></div>
+
+            <div class="lcard">
+              <div class="sec-hd" style="margin-bottom:9px"><strong>나의 독서 취향</strong></div>
+              <button id="taste-cta-btn" class="taste-cta full" onclick="openTaste()"><i class="ti ti-sparkles"></i><span>나의 독서 취향 알아보기</span></button>
+              <div id="taste-result-card" style="display:none"><div id="taste-result-card-body"></div><button class="taste-redo" onclick="openTaste()"><i class="ti ti-refresh" style="font-size:11px"></i> 다시 진단하기</button></div>
+            </div>
+
+            <div class="lcard">
+              <div class="sec-hd" style="margin-bottom:9px"><strong>이달의 목표</strong></div>
+              <button class="goal-card-btn" onclick="openGoalModal()">
+                <svg width="48" height="48" viewBox="0 0 48 48" style="flex-shrink:0">
+                  <circle cx="24" cy="24" r="19" fill="none" stroke="var(--color-border-tertiary)" stroke-width="4.5"/>
+                  <circle id="goal-card-ring" cx="24" cy="24" r="19" fill="none" stroke="#E24B4A" stroke-width="4.5" stroke-dasharray="119.4" stroke-dashoffset="80" stroke-linecap="round" transform="rotate(-90 24 24)"/>
+                  <text id="goal-card-pct" x="24" y="28" text-anchor="middle" font-size="10" font-weight="800" fill="var(--color-text-primary)">33%</text>
+                </svg>
+                <div class="gcb-info">
+                  <p><b id="goal-done">1</b> / <b id="goal-target">3</b>권</p>
+                  <span id="goal-sub">2권 더 읽으면 달성!</span>
+                </div>
+                <span class="gcb-edit"><i class="ti ti-adjustments-alt"></i> 설정</span>
+              </button>
             </div>
           </div>
-          <div>
-            <div class="dashboard-grid">
-              <div class="dash-box" onclick="openRecent()" title="완독한 책 보기"><p>47</p><span>전체 완독</span></div>
-              <div class="dash-box" onclick="goRecord()" title="독서 기록장으로"><p>8</p><span>작성한 글</span></div>
-              <div class="dash-box" onclick="goRecordHl()" title="하이라이트 보기"><p>12</p><span>하이라이트</span></div>
-            </div>
-            <div class="sec-hd" style="margin-bottom:7px"><strong>취향 프로파일</strong></div>
-            <div class="taste-note">📚 <strong>역사·문화</strong>와 <strong>창작동화</strong> 책을 많이 읽고 있어요!<br>다음엔 <strong>과학·예술</strong> 분야 책도 읽어보는 건 어떨까요?</div>
-            <div class="genre-row">
-              <div class="genre-chip">역사·문화 ★★★</div>
-              <div class="genre-chip">창작동화 ★★★</div>
-              <div class="genre-chip">과학 ★★</div>
-              <div class="genre-chip">심리·성장 ★★</div>
-            </div>
-            <button class="taste-btn" onclick="openTaste()"><i class="ti ti-sparkles" style="font-size:13px"></i> 나의 독서 취향은?</button>
-            <div class="sec-hd" style="margin-bottom:7px"><strong>최근 읽은 책</strong><a onclick="openRecent()">더보기 ›</a></div>
-            <div class="hitem">
-              <div class="hcover">📖</div>
-              <div class="hinfo">
-                <p>시간을 굽는 빵집</p>
-                <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-                  <span style="font-size:10px;color:var(--red);font-weight:600">읽는 중 62%</span>
+
+          <!-- ▶ 오른쪽: 독서 평가 · 카테고리 분석 · 독서로드 이력 · 책 -->
+          <div class="dash-right">
+            <div class="da-row2">
+              <!-- 독서 종합 평가 (컴팩트) -->
+              <div class="da-card da-eval">
+                <div class="da-eval-hd">
+                  <div class="da-eval-ico">🧭</div>
+                  <div><p>독서 종합 평가</p><span>읽은 47권 기반 분석</span></div>
+                </div>
+                <div class="da-eval-body">문연주 학생은 <strong>여러 분야를 고루 읽는 균형 잡힌 독서가</strong>예요. 특히 <strong>세상과 돈이 움직이는 이야기</strong>를 즐겨 읽어, <strong>금융·경제·공공 분야</strong>가 잘 어울려요.</div>
+                <span class="da-eval-label">💼 추천 직업</span>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px">
+                  <button class="job-btn on" onclick="selectCareerJob('banker',this)">🏦 은행원</button>
+                  <button class="job-btn" onclick="selectCareerJob('accountant',this)">🧮 회계사</button>
+                  <button class="job-btn" onclick="selectCareerJob('reporter',this)">📰 경제 기자</button>
+                  <button class="job-btn" onclick="selectCareerJob('officer',this)">🏛️ 공무원</button>
+                </div>
+                <span class="da-eval-label"><span id="career-job-label">은행원</span> 관련 베스트셀러 📚</span>
+                <div id="career-books" style="display:flex;flex-direction:column;gap:7px">
+                  <div style="display:flex;align-items:center;gap:9px;background:#fff;border:0.5px solid #E9D5FF;border-radius:9px;padding:6px 9px"><div style="width:28px;height:36px;border-radius:5px;background:#F5F3FF;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0">💵</div><div style="min-width:0"><p style="font-size:11px;font-weight:700;color:#4B2E83;line-height:1.3">용돈으로 배우는 경제 <span class="best-badge">BEST</span></p><span style="font-size:10px;color:#9333EA">이경제 글 · 김저금 그림</span></div></div>
+                  <div style="display:flex;align-items:center;gap:9px;background:#fff;border:0.5px solid #E9D5FF;border-radius:9px;padding:6px 9px"><div style="width:28px;height:36px;border-radius:5px;background:#F5F3FF;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0">🏦</div><div style="min-width:0"><p style="font-size:11px;font-weight:700;color:#4B2E83;line-height:1.3">처음 만나는 은행과 돈 이야기 <span class="best-badge">BEST</span></p><span style="font-size:10px;color:#9333EA">박금융 글</span></div></div>
                 </div>
               </div>
-              <button class="xlink" onclick="openViewer()"><i class="ti ti-book-open"></i>이어읽기</button>
+
+              <!-- 도서 카테고리 분석 -->
+              <div class="da-card">
+                <div class="da-hd"><i class="ti ti-chart-radar"></i>도서 카테고리 분석</div>
+                <div class="radar-wrap">
+                  <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:270px;display:block;margin:0 auto">
+<polygon points="160.0,127.0 179.9,138.5 179.9,161.5 160.0,173.0 140.1,161.5 140.1,138.5" fill="none" stroke="#E5E7EB" stroke-width="1"/><polygon points="160.0,104.0 199.8,127.0 199.8,173.0 160.0,196.0 120.2,173.0 120.2,127.0" fill="none" stroke="#E5E7EB" stroke-width="1"/><polygon points="160.0,81.0 219.8,115.5 219.8,184.5 160.0,219.0 100.2,184.5 100.2,115.5" fill="none" stroke="#E5E7EB" stroke-width="1"/><polygon points="160.0,58.0 239.7,104.0 239.7,196.0 160.0,242.0 80.3,196.0 80.3,104.0" fill="none" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="160.0" y2="58.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="239.7" y2="104.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="239.7" y2="196.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="160.0" y2="242.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="80.3" y2="196.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="80.3" y2="104.0" stroke="#E5E7EB" stroke-width="1"/>
+<polygon points="160.0,64.6 222.6,113.9 211.2,179.6 160.0,189.4 131.5,166.4 142.9,140.1" fill="rgba(126,34,206,0.18)" stroke="#7E22CE" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="160.0" cy="64.6" r="3" fill="#7E22CE"/><circle cx="222.6" cy="113.9" r="3" fill="#7E22CE"/><circle cx="211.2" cy="179.6" r="3" fill="#7E22CE"/><circle cx="160.0" cy="189.4" r="3" fill="#7E22CE"/><circle cx="131.5" cy="166.4" r="3" fill="#7E22CE"/><circle cx="142.9" cy="140.1" r="3" fill="#7E22CE"/><text x="160.0" y="30.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="middle">사회·경제</text><text x="160.0" y="42.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="middle">13권</text><text x="258.7" y="87.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="start">그림·문학</text><text x="258.7" y="99.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="start">11권</text><text x="258.7" y="201.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="start">역사·인물</text><text x="258.7" y="213.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="start">9권</text><text x="160.0" y="258.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="middle">인문·교양</text><text x="160.0" y="270.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="middle">6권</text><text x="61.3" y="201.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="end">수학·과학</text><text x="61.3" y="213.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="end">5권</text><text x="61.3" y="87.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="end">문화·예술</text><text x="61.3" y="99.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="end">3권</text>
+</svg>
+                </div>
+                <p class="da-foot">💡 적게 읽은 <strong>문화·예술·수학·과학</strong> 분야도 읽어보면 관심사가 더 넓어져요.</p>
+              </div>
             </div>
-            <div class="hitem">
-              <div class="hcover">📱</div>
-              <div class="hinfo">
-                <p>스마트한 10대를 위한 디지털 문해력</p>
-                <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-                  <span style="font-size:10px;color:var(--color-text-tertiary)">완독 · 5월 28일</span>
-                  <span style="font-size:9px;font-weight:600;color:#059669;background:#F0FDF4;border:0.5px solid #BBF7D0;padding:1px 6px;border-radius:3px">퀴즈 완료</span>
+
+            <!-- 독서로드 설정 이력 -->
+            <div class="da-card" style="margin-top:14px">
+              <div class="da-hd"><i class="ti ti-route" style="color:#1565C0"></i>독서로드 설정 이력<a class="da-more" onclick="goRoadSetup()">설정하기 ›</a></div>
+              <div id="road-history-area" class="road-hist-grid"></div>
+            </div>
+
+            <!-- 책 목록 -->
+            <div class="dash-books" style="margin-top:16px">
+              <div>
+                <div class="sec-hd" style="margin-bottom:8px"><strong>최근 읽은 책</strong><a onclick="openRecent()">더보기 ›</a></div>
+                <div class="hitem">
+                  <div class="hcover">📖</div>
+                  <div class="hinfo"><p>시간을 굽는 빵집</p><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="font-size:10px;color:var(--red);font-weight:600">읽는 중 62%</span></div></div>
+                  <button class="xlink" onclick="openViewer()"><i class="ti ti-book-open"></i>이어읽기</button>
+                </div>
+                <div class="hitem">
+                  <div class="hcover">📱</div>
+                  <div class="hinfo"><p>스마트한 10대를 위한 디지털 문해력</p><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="font-size:10px;color:var(--color-text-tertiary)">완독 · 5월 28일</span><span style="font-size:9px;font-weight:600;color:#059669;background:#F0FDF4;border:0.5px solid #BBF7D0;padding:1px 6px;border-radius:3px">퀴즈 완료</span></div></div>
+                  <button class="xlink" onclick="openReviewView()" style="background:#F0FDF4;color:#059669"><i class="ti ti-eye"></i>독후감</button>
+                </div>
+                <div class="hitem">
+                  <div class="hcover" style="background:#FFF3E0">🏛️</div>
+                  <div class="hinfo"><p>조선의 왕들</p><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="font-size:10px;color:var(--color-text-tertiary)">완독 · 5월 10일</span><span style="font-size:9px;font-weight:600;color:#E65100;background:#FFF3E0;border:0.5px solid #FED7AA;padding:1px 6px;border-radius:3px">퀴즈 미완료</span></div></div>
+                  <button class="xlink" onclick="openReviewWrite('조선의 왕들')"><i class="ti ti-pencil"></i>독후감</button>
                 </div>
               </div>
-              <div class="hbtns"><button class="xlink" onclick="openReviewView()" style="background:#F0FDF4;color:#059669"><i class="ti ti-eye"></i>독후감 보기</button><button class="xlink" onclick="openIntro()" style="background:#EEF2FF;color:#4338CA"><i class="ti ti-book-open"></i>다시보기</button></div>
-            </div>
-            <div class="hitem">
-              <div class="hcover" style="background:#FFF3E0">🏛️</div>
-              <div class="hinfo">
-                <p>조선의 왕들</p>
-                <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-                  <span style="font-size:10px;color:var(--color-text-tertiary)">완독 · 5월 10일</span>
-                  <span style="font-size:9px;font-weight:600;color:#E65100;background:#FFF3E0;border:0.5px solid #FED7AA;padding:1px 6px;border-radius:3px">퀴즈 미완료</span>
+              <div>
+                <div class="sec-hd" style="margin-bottom:8px"><strong>좋아요를 누른 책</strong><a onclick="openLiked()">더보기 ›</a></div>
+                <div class="hitem">
+                  <div class="hcover">⛵</div>
+                  <div class="hinfo"><p>역사로 통하는 맛의 항해</p><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="font-size:10px;color:#E11D48;font-weight:600"><i class="ti ti-heart-filled" style="font-size:10px"></i> 좋아요</span><span style="font-size:10px;color:var(--color-text-tertiary)">역사·문화</span></div></div>
+                  <button class="xlink" onclick="openIntroMat()" style="background:#FEF2F2;color:#E11D48"><i class="ti ti-book-open"></i>다시 보기</button>
+                </div>
+                <div class="hitem">
+                  <div class="hcover" style="background:#FFF1F5">🐰</div>
+                  <div class="hinfo"><p>거미줄 줄넘기</p><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="font-size:10px;color:#E11D48;font-weight:600"><i class="ti ti-heart-filled" style="font-size:10px"></i> 좋아요</span><span style="font-size:10px;color:var(--color-text-tertiary)">우정·성장</span></div></div>
+                  <button class="xlink" onclick="openIntro()" style="background:#FEF2F2;color:#E11D48"><i class="ti ti-book-open"></i>다시 보기</button>
+                </div>
+                <div class="hitem">
+                  <div class="hcover" style="background:#EFF6FF">🔬</div>
+                  <div class="hinfo"><p>과학에 빠진 아이</p><div style="display:flex;align-items:center;gap:5px;margin-top:2px"><span style="font-size:10px;color:#E11D48;font-weight:600"><i class="ti ti-heart-filled" style="font-size:10px"></i> 좋아요</span><span style="font-size:10px;color:var(--color-text-tertiary)">과학</span></div></div>
+                  <button class="xlink" onclick="openIntro()" style="background:#FEF2F2;color:#E11D48"><i class="ti ti-book-open"></i>다시 보기</button>
                 </div>
               </div>
-              <div class="hbtns"><button class="xlink" onclick="openReviewWrite('조선의 왕들')"><i class="ti ti-pencil"></i>독후감 쓰기</button><button class="xlink" onclick="openIntro()" style="background:#EEF2FF;color:#4338CA"><i class="ti ti-book-open"></i>다시보기</button></div>
-            </div>
-            <div class="sec-hd" style="margin:16px 0 7px"><strong>좋아요를 누른 책</strong><a onclick="openLiked()">더보기 ›</a></div>
-            <div class="hitem">
-              <div class="hcover">⛵</div>
-              <div class="hinfo">
-                <p>역사로 통하는 맛의 항해</p>
-                <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-                  <span style="font-size:10px;color:#E11D48;font-weight:600"><i class="ti ti-heart-filled" style="font-size:10px"></i> 좋아요</span>
-                  <span style="font-size:10px;color:var(--color-text-tertiary)">역사·문화</span>
-                </div>
-              </div>
-              <button class="xlink" onclick="openIntroMat()" style="background:#FEF2F2;color:#E11D48"><i class="ti ti-book-open"></i>다시 보기</button>
-            </div>
-            <div class="hitem">
-              <div class="hcover" style="background:#FFF1F5">🐰</div>
-              <div class="hinfo">
-                <p>거미줄 줄넘기</p>
-                <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-                  <span style="font-size:10px;color:#E11D48;font-weight:600"><i class="ti ti-heart-filled" style="font-size:10px"></i> 좋아요</span>
-                  <span style="font-size:10px;color:var(--color-text-tertiary)">우정·성장</span>
-                </div>
-              </div>
-              <button class="xlink" onclick="openIntro()" style="background:#FEF2F2;color:#E11D48"><i class="ti ti-book-open"></i>다시 보기</button>
-            </div>
-            <div class="hitem">
-              <div class="hcover" style="background:#EFF6FF">🔬</div>
-              <div class="hinfo">
-                <p>과학에 빠진 아이</p>
-                <div style="display:flex;align-items:center;gap:5px;margin-top:2px">
-                  <span style="font-size:10px;color:#E11D48;font-weight:600"><i class="ti ti-heart-filled" style="font-size:10px"></i> 좋아요</span>
-                  <span style="font-size:10px;color:var(--color-text-tertiary)">과학</span>
-                </div>
-              </div>
-              <button class="xlink" onclick="openIntro()" style="background:#FEF2F2;color:#E11D48"><i class="ti ti-book-open"></i>다시 보기</button>
             </div>
           </div>
         </div>
@@ -1604,90 +1830,6 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
           <div class="rec-card">
             <div class="rc-top"><div class="rc-cover" style="background:#FFF1F5">🐰</div><div><div class="rc-book">거미줄 줄넘기</div><div class="rc-date">2025.04.25 작성</div></div><span class="rec-stars" style="margin-left:auto">★★★★<span class="off">★</span></span></div>
             <div class="rec-blurb-text">친구와 다투고 화해하는 장면에서 내 모습이 떠올랐다. 용기를 내서 먼저 손을 내미는 게 얼마나 어려운지, 그리고 얼마나 멋진 일인지 알게 되었다. 나도 친구에게 먼저 다가가 봐야겠다. <span style="color:var(--color-text-tertiary);font-size:10px">(96자)</span></div>
-          </div>
-        </div>
-      </div>
-      <!-- 나의 독서 로드 -->
-      <div id="shelf-aptitude" class="scroll" style="display:none">
-        <!-- 📊 나의 독서 분석 (카테고리 + 진로) -->
-        <div class="sec-hd" style="margin-bottom:10px"><strong>📊 나의 독서 분석</strong></div>
-        <div style="display:grid;grid-template-columns:340px 1fr;gap:16px">
-          <!-- 왼쪽: 독서 종합 평가 + 직업/책 -->
-          <div style="background:linear-gradient(135deg,#FAF5FF,#F3E8FF);border:0.5px solid #E9D5FF;border-radius:14px;padding:15px">
-            <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px">
-              <div style="width:38px;height:38px;border-radius:11px;background:#7E22CE;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0">🧭</div>
-              <div>
-                <p style="font-size:15px;font-weight:900;color:#6B21A8">독서 종합 평가</p>
-                <span style="font-size:10px;color:#9333EA">읽은 47권을 바탕으로 분석했어요</span>
-              </div>
-            </div>
-            <div style="font-size:11px;color:#581C87;line-height:1.7;margin-bottom:13px">문연주 학생은 <strong>여러 분야를 고루 읽는 균형 잡힌 독서가</strong>예요. 특히 <strong>세상과 돈이 움직이는 이야기</strong>를 즐겨 읽어, <strong>금융·경제·공공 분야</strong>의 일이 잘 어울려요.</div>
-            <!-- 추천 직업 버튼 -->
-            <span style="font-size:10px;font-weight:700;color:#9333EA;display:block;margin-bottom:7px">💼 추천 직업</span>
-            <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px">
-              <button class="job-btn on" onclick="selectCareerJob('banker',this)">🏦 은행원</button>
-              <button class="job-btn" onclick="selectCareerJob('accountant',this)">🧮 회계사</button>
-              <button class="job-btn" onclick="selectCareerJob('reporter',this)">📰 경제 기자</button>
-              <button class="job-btn" onclick="selectCareerJob('officer',this)">🏛️ 공무원</button>
-            </div>
-            <!-- 선택한 직업의 추천 책 (동적) -->
-            <span style="font-size:10px;font-weight:700;color:#9333EA;display:block;margin-bottom:7px"><span id="career-job-label">은행원</span> 관련 베스트셀러 📚</span>
-            <div id="career-books" style="display:flex;flex-direction:column;gap:7px">
-              <div style="display:flex;align-items:center;gap:9px;background:#fff;border:0.5px solid #E9D5FF;border-radius:9px;padding:6px 9px"><div style="width:28px;height:36px;border-radius:5px;background:#F5F3FF;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0">💵</div><div style="min-width:0"><p style="font-size:11px;font-weight:700;color:#4B2E83;line-height:1.3">용돈으로 배우는 경제 <span class="best-badge">BEST</span></p><span style="font-size:10px;color:#9333EA">이경제 글 · 김저금 그림</span></div></div>
-              <div style="display:flex;align-items:center;gap:9px;background:#fff;border:0.5px solid #E9D5FF;border-radius:9px;padding:6px 9px"><div style="width:28px;height:36px;border-radius:5px;background:#F5F3FF;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0">🏦</div><div style="min-width:0"><p style="font-size:11px;font-weight:700;color:#4B2E83;line-height:1.3">처음 만나는 은행과 돈 이야기 <span class="best-badge">BEST</span></p><span style="font-size:10px;color:#9333EA">박금융 글</span></div></div>
-            </div>
-          </div>
-
-          <!-- 오른쪽: 도서 카테고리 분석 -->
-          <div>
-            <div class="sec-hd" style="margin-bottom:8px"><strong>도서 카테고리 분석</strong></div>
-            <div style="background:var(--color-background-secondary);border-radius:14px;padding:8px 12px 4px;margin-bottom:12px">
-              <svg viewBox="0 0 320 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:280px;display:block;margin:0 auto">
-<polygon points="160.0,127.0 179.9,138.5 179.9,161.5 160.0,173.0 140.1,161.5 140.1,138.5" fill="none" stroke="#E5E7EB" stroke-width="1"/><polygon points="160.0,104.0 199.8,127.0 199.8,173.0 160.0,196.0 120.2,173.0 120.2,127.0" fill="none" stroke="#E5E7EB" stroke-width="1"/><polygon points="160.0,81.0 219.8,115.5 219.8,184.5 160.0,219.0 100.2,184.5 100.2,115.5" fill="none" stroke="#E5E7EB" stroke-width="1"/><polygon points="160.0,58.0 239.7,104.0 239.7,196.0 160.0,242.0 80.3,196.0 80.3,104.0" fill="none" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="160.0" y2="58.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="239.7" y2="104.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="239.7" y2="196.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="160.0" y2="242.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="80.3" y2="196.0" stroke="#E5E7EB" stroke-width="1"/><line x1="160" y1="150" x2="80.3" y2="104.0" stroke="#E5E7EB" stroke-width="1"/>
-<polygon points="160.0,64.6 222.6,113.9 211.2,179.6 160.0,189.4 131.5,166.4 142.9,140.1" fill="rgba(126,34,206,0.18)" stroke="#7E22CE" stroke-width="2" stroke-linejoin="round"/>
-<circle cx="160.0" cy="64.6" r="3" fill="#7E22CE"/><circle cx="222.6" cy="113.9" r="3" fill="#7E22CE"/><circle cx="211.2" cy="179.6" r="3" fill="#7E22CE"/><circle cx="160.0" cy="189.4" r="3" fill="#7E22CE"/><circle cx="131.5" cy="166.4" r="3" fill="#7E22CE"/><circle cx="142.9" cy="140.1" r="3" fill="#7E22CE"/><text x="160.0" y="30.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="middle">사회·경제</text><text x="160.0" y="42.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="middle">13권</text><text x="258.7" y="87.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="start">그림·문학</text><text x="258.7" y="99.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="start">11권</text><text x="258.7" y="201.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="start">역사·인물</text><text x="258.7" y="213.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="start">9권</text><text x="160.0" y="258.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="middle">인문·교양</text><text x="160.0" y="270.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="middle">6권</text><text x="61.3" y="201.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="end">수학·과학</text><text x="61.3" y="213.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="end">5권</text><text x="61.3" y="87.0" font-size="10.5" font-weight="700" fill="#4B5563" text-anchor="end">문화·예술</text><text x="61.3" y="99.0" font-size="9" font-weight="700" fill="#7E22CE" text-anchor="end">3권</text>
-</svg>
-            </div>
-            <p style="font-size:10px;color:var(--color-text-tertiary);line-height:1.6;margin-top:10px">💡 적게 읽은 <strong>문화·예술·수학·과학</strong> 분야도 읽어보면 관심사가 더 넓어져요. 책을 더 읽을수록 분석이 정교해져요.</p>
-          </div>
-        </div>
-
-        <!-- 구분선 -->
-        <div style="height:1px;background:var(--color-border-tertiary);margin:24px 0 20px"></div>
-
-        <!-- 🛤️ 독서 로드 설정 -->
-        <div class="road-setup">
-          <div class="sec-hd" style="margin-bottom:6px">
-            <strong>📚 읽고 싶은 '길'을 골라보세요</strong>
-            <span id="road-active-label" class="road-active-badge" style="display:none"></span>
-          </div>
-          <p style="font-size:10.5px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:14px">길을 선택하면 <strong style="color:#1565C0">홈 화면의 '독서로드'</strong>에 저학년부터 고학년 순서로 바로 반영되고, 설정 내역은 아래 이력에 기록돼요.</p>
-
-          <div class="road-dd-row">
-            <div class="road-dd-field">
-              <label>독서 로드 (분야의 길)</label>
-              <div class="road-dd-wrap">
-                <select id="road-type-select" onchange="onRoadTypeChange()">
-                  <option value="">길을 선택하세요</option>
-                  <option value="literature">📖 문학길 — 그림동화부터 고전문학까지</option>
-                  <option value="science">🔬 과학길 — 자연 관찰부터 과학사까지</option>
-                  <option value="economy">💰 경제길 — 용돈부터 경제 개념까지</option>
-                  <option value="history">🏛️ 역사길 — 옛이야기부터 세계사까지</option>
-                  <option value="art">🎨 예술길 — 색깔놀이부터 예술사까지</option>
-                  <option value="computer">💻 컴퓨터길 — 컴퓨터 첫걸음부터 인공지능까지</option>
-                </select>
-                <i class="ti ti-chevron-down"></i>
-              </div>
-            </div>
-          </div>
-
-          <!-- 미리보기 + 설정 영역 -->
-          <div id="road-config-area"></div>
-
-          <!-- 설정 이력 -->
-          <div style="margin-top:18px">
-            <div class="sec-hd" style="margin-bottom:9px"><strong style="font-size:12px">🗂️ 독서로드 설정 이력</strong></div>
-            <div id="road-history-area"></div>
           </div>
         </div>
       </div>
@@ -1927,6 +2069,34 @@ textarea.review-input{min-height:180px;line-height:1.7;resize:vertical}
             <span style="font-size:9px;background:#E65100;color:#fff;padding:2px 8px;border-radius:4px;font-weight:700;margin-left:2px">편집 제작</span>
           </div>
           <div id="think-page-body"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 이달의 목표 설정 팝업 -->
+    <div id="goal-modal" class="goal-modal" onclick="if(event.target===this)closeGoalModal()">
+      <div class="goal-modal-box">
+        <button class="goal-modal-x" onclick="closeGoalModal()"><i class="ti ti-x"></i></button>
+        <div class="gm-head">
+          <div class="gm-ico">🎯</div>
+          <div><p class="gm-title">이달의 목표 설정</p><span class="gm-sub">이번 달에 읽고 싶은 책 권수를 정해보세요.</span></div>
+        </div>
+        <div class="gm-stepper">
+          <button class="gm-step" onclick="goalStep(-1)" aria-label="줄이기"><i class="ti ti-minus"></i></button>
+          <div class="gm-value"><b id="gm-num">3</b><span>권</span></div>
+          <button class="gm-step" onclick="goalStep(1)" aria-label="늘리기"><i class="ti ti-plus"></i></button>
+        </div>
+        <div class="gm-presets">
+          <button onclick="goalPreset(2,this)">2권</button>
+          <button class="on" onclick="goalPreset(3,this)">3권</button>
+          <button onclick="goalPreset(5,this)">5권</button>
+          <button onclick="goalPreset(8,this)">8권</button>
+          <button onclick="goalPreset(10,this)">10권</button>
+        </div>
+        <div class="gm-note"><i class="ti ti-book" style="font-size:13px;color:#E65100"></i> 이번 달 현재 <b id="gm-done">1</b>권 완독했어요.</div>
+        <div class="gm-actions">
+          <button class="gm-cancel" onclick="closeGoalModal()">취소</button>
+          <button class="gm-save" onclick="saveGoal()"><i class="ti ti-check" style="font-size:14px"></i> 목표 저장</button>
         </div>
       </div>
     </div>
@@ -2244,33 +2414,136 @@ document.addEventListener('click',function(e){
   if(e.target.classList&&e.target.classList.contains('hl'))return;
   closeHlPopup();
 });
-function openChangjak(el){
-  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');
-  document.getElementById('booklist-main').style.display='none';
-  document.getElementById('booklist-audio').style.display='none';
-  document.getElementById('booklist-changjak').style.display='block';
+/* ===== 책읽기 패널 전환 ===== */
+function hideBooklistPanels(){
+  ['booklist-main','booklist-audio','booklist-changjak','booklist-genre','booklist-road'].forEach(function(id){
+    var e=document.getElementById(id); if(e) e.style.display='none';
+  });
 }
-function openAudio(el){
+function setCatActive(el){
   document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');
-  document.getElementById('booklist-main').style.display='none';
-  document.getElementById('booklist-changjak').style.display='none';
-  document.getElementById('booklist-audio').style.display='block';
+  if(el) el.classList.add('on');
 }
-function catClick(el,panel){
-  document.querySelectorAll('.cat-item').forEach(c=>c.classList.remove('on'));
-  el.classList.add('on');
-  document.getElementById('booklist-main').style.display='block';
-  document.getElementById('booklist-changjak').style.display='none';
-  document.getElementById('booklist-audio').style.display='none';
+function openChangjak(el){ setCatActive(el); hideBooklistPanels(); document.getElementById('booklist-changjak').style.display='block'; }
+function openAudio(el){ setCatActive(el); hideBooklistPanels(); document.getElementById('booklist-audio').style.display='block'; }
+function openSeries(el){ setCatActive(el); hideBooklistPanels(); var t=document.getElementById('booklist-main-title'); if(t)t.textContent='시리즈'; document.getElementById('booklist-main').style.display='block'; }
+function openRoad(el){ setCatActive(el); hideBooklistPanels(); document.getElementById('booklist-road').style.display='block'; }
+
+/* ===== 장르별 독서목록: 큰 카테고리 → 작은 카테고리 필터 ===== */
+const GENRE_CATS = {
+  all: {label:'전체', subs:[]},
+  lit: {label:'그림/문학', subs:['문학','소설','전래동화','세계명작','창작동화','한국문학','시','그림책','만화책']},
+  hum: {label:'인문/교양', subs:['인문','철학','교양','글쓰기','심리','자기계발','상식']},
+  his: {label:'역사/인물', subs:['위인','역사','지리학']},
+  soc: {label:'사회/경제', subs:['상식','경제','인권','정치','방송','지리','세계']},
+  sci: {label:'수학/과학', subs:['수학','과학','물리','화학','생물','지구과학','환경','건강','컴퓨터','인공지능']},
+  art: {label:'문화/예술', subs:['문화','예술','여행','취미','건축']}
+};
+const BIG_ORDER=['all','lit','hum','his','soc','sci','art'];
+const GENRE_BOOKS = [
+  // 그림/문학
+  {e:'📖',t:'어린이 문학의 숲',big:'lit',sub:'문학'},{e:'📚',t:'처음 만나는 문학 이야기',big:'lit',sub:'문학'},
+  {e:'📕',t:'비밀의 화원',big:'lit',sub:'소설'},{e:'🏰',t:'수상한 골목길',big:'lit',sub:'소설'},
+  {e:'🐯',t:'해와 달이 된 오누이',big:'lit',sub:'전래동화'},{e:'🫘',t:'콩쥐 팥쥐',big:'lit',sub:'전래동화'},{e:'🧚',t:'선녀와 나무꾼',big:'lit',sub:'전래동화'},
+  {e:'🌟',t:'어린 왕자',big:'lit',sub:'세계명작'},{e:'🏝️',t:'보물섬',big:'lit',sub:'세계명작'},{e:'👒',t:'빨강 머리 앤',big:'lit',sub:'세계명작'},
+  {e:'🍞',t:'시간을 굽는 빵집',big:'lit',sub:'창작동화'},{e:'🐔',t:'마당을 나온 암탉',big:'lit',sub:'창작동화'},{e:'🐰',t:'거미줄 줄넘기',big:'lit',sub:'창작동화'},
+  {e:'👧',t:'몽실 언니',big:'lit',sub:'한국문학'},{e:'🌾',t:'운수 좋은 날 (어린이판)',big:'lit',sub:'한국문학'},
+  {e:'🌸',t:'엄마야 누나야',big:'lit',sub:'시'},{e:'🍃',t:'어린이 동시집',big:'lit',sub:'시'},
+  {e:'🐶',t:'강아지똥',big:'lit',sub:'그림책'},{e:'🌈',t:'구름빵',big:'lit',sub:'그림책'},{e:'🦊',t:'여우와 별',big:'lit',sub:'그림책'},
+  {e:'💥',t:'내일은 발명왕',big:'lit',sub:'만화책'},{e:'🦸',t:'why? 과학 시리즈',big:'lit',sub:'만화책'},
+  // 인문/교양
+  {e:'🧠',t:'생각하는 힘',big:'hum',sub:'인문'},{e:'🗣️',t:'사람이란 무엇일까',big:'hum',sub:'인문'},
+  {e:'🤔',t:'어린이를 위한 철학 첫걸음',big:'hum',sub:'철학'},{e:'⚖️',t:'소크라테스 아저씨',big:'hum',sub:'철학'},
+  {e:'🎓',t:'알아두면 쓸모있는 교양',big:'hum',sub:'교양'},{e:'📜',t:'교양의 시작',big:'hum',sub:'교양'},
+  {e:'✏️',t:'글쓰기가 좋아지는 책',big:'hum',sub:'글쓰기'},{e:'📝',t:'내 마음을 쓰는 법',big:'hum',sub:'글쓰기'},
+  {e:'😰',t:'불안과 걱정이 많던 아이가',big:'hum',sub:'심리'},{e:'💗',t:'감정을 읽는 아이',big:'hum',sub:'심리'},
+  {e:'🚀',t:'꿈을 이루는 습관',big:'hum',sub:'자기계발'},{e:'🌱',t:'작은 성공의 비밀',big:'hum',sub:'자기계발'},
+  {e:'💡',t:'알쏭달쏭 생활 상식',big:'hum',sub:'상식'},{e:'❓',t:'왜 그럴까 궁금한 이야기',big:'hum',sub:'상식'},
+  // 역사/인물
+  {e:'👑',t:'세종대왕 이야기',big:'his',sub:'위인'},{e:'💡',t:'에디슨의 발명 노트',big:'his',sub:'위인'},{e:'🩺',t:'나이팅게일',big:'his',sub:'위인'},
+  {e:'🏛️',t:'조선의 왕들',big:'his',sub:'역사'},{e:'🗿',t:'한국사 첫걸음',big:'his',sub:'역사'},{e:'🌍',t:'세계사 대모험',big:'his',sub:'역사'},
+  {e:'🗺️',t:'지도로 보는 우리나라',big:'his',sub:'지리학'},{e:'🧭',t:'땅과 사람 이야기',big:'his',sub:'지리학'},
+  // 사회/경제
+  {e:'📰',t:'뉴스가 보이는 사회 상식',big:'soc',sub:'상식'},{e:'🏙️',t:'내가 사는 도시의 규칙',big:'soc',sub:'상식'},
+  {e:'💰',t:'용돈으로 배우는 경제',big:'soc',sub:'경제'},{e:'🏦',t:'처음 만나는 은행과 돈',big:'soc',sub:'경제'},{e:'📈',t:'어린이 경제 신문',big:'soc',sub:'경제'},
+  {e:'🤝',t:'모두가 소중해',big:'soc',sub:'인권'},{e:'✊',t:'어린이 인권 이야기',big:'soc',sub:'인권'},
+  {e:'🗳️',t:'선거란 무엇일까',big:'soc',sub:'정치'},{e:'🏛️',t:'어린이 민주주의',big:'soc',sub:'정치'},
+  {e:'📺',t:'방송국 탐험',big:'soc',sub:'방송'},{e:'🎙️',t:'기자가 되고 싶어',big:'soc',sub:'방송'},
+  {e:'🌐',t:'세계 여러 나라',big:'soc',sub:'지리'},{e:'🧭',t:'지구촌 이웃들',big:'soc',sub:'지리'},
+  {e:'🌎',t:'세계는 지금',big:'soc',sub:'세계'},{e:'🛂',t:'다른 나라 친구들',big:'soc',sub:'세계'},
+  // 수학/과학
+  {e:'➗',t:'수학이 재미있어지는 책',big:'sci',sub:'수학'},{e:'🔢',t:'숫자로 보는 생활',big:'sci',sub:'수학'},
+  {e:'🔬',t:'과학에 빠진 아이',big:'sci',sub:'과학'},{e:'🧪',t:'신기한 실험실',big:'sci',sub:'과학'},
+  {e:'🧲',t:'힘과 운동의 비밀',big:'sci',sub:'물리'},{e:'⚙️',t:'움직이는 모든 것',big:'sci',sub:'물리'},
+  {e:'⚗️',t:'신기한 화학',big:'sci',sub:'화학'},{e:'🧴',t:'주방 속 화학',big:'sci',sub:'화학'},
+  {e:'🦋',t:'곤충의 한살이',big:'sci',sub:'생물'},{e:'🌿',t:'식물 탐험대',big:'sci',sub:'생물'},{e:'🦁',t:'동물 이야기',big:'sci',sub:'생물'},
+  {e:'🌋',t:'지구의 속살',big:'sci',sub:'지구과학'},{e:'🌊',t:'바다의 비밀',big:'sci',sub:'지구과학'},{e:'🪐',t:'우주 여행',big:'sci',sub:'지구과학'},
+  {e:'♻️',t:'지구를 지키는 아이',big:'sci',sub:'환경'},{e:'🌳',t:'숲이 들려주는 이야기',big:'sci',sub:'환경'},
+  {e:'🏃',t:'튼튼한 몸 만들기',big:'sci',sub:'건강'},{e:'🥗',t:'건강한 밥상',big:'sci',sub:'건강'},
+  {e:'💻',t:'컴퓨터 첫걸음',big:'sci',sub:'컴퓨터'},{e:'⌨️',t:'코딩이 궁금해',big:'sci',sub:'컴퓨터'},
+  {e:'🤖',t:'처음 만나는 인공지능',big:'sci',sub:'인공지능'},{e:'🧠',t:'AI와 친구가 될래',big:'sci',sub:'인공지능'},
+  // 문화/예술
+  {e:'🎭',t:'세계의 축제',big:'art',sub:'문화'},{e:'🏮',t:'우리 문화 이야기',big:'art',sub:'문화'},
+  {e:'🎨',t:'미술 여행',big:'art',sub:'예술'},{e:'🖼️',t:'명화 속 비밀',big:'art',sub:'예술'},
+  {e:'✈️',t:'세계 여행 가방',big:'art',sub:'여행'},{e:'🧳',t:'기차 타고 떠나요',big:'art',sub:'여행'},
+  {e:'⚽',t:'취미가 생겼어요',big:'art',sub:'취미'},{e:'🎲',t:'보드게임의 세계',big:'art',sub:'취미'},
+  {e:'🏛️',t:'건축가의 눈',big:'art',sub:'건축'},{e:'🏠',t:'집은 어떻게 지을까',big:'art',sub:'건축'}
+];
+let curBig='all', curSub='전체';
+function selectBig(el, big){
+  setCatActive(el);
+  hideBooklistPanels();
+  document.getElementById('booklist-genre').style.display='block';
+  curBig=big; curSub='전체';
+  renderGenreChips(); renderGenreGrid();
+  var sc=document.querySelector('#v1 .booklist-content'); if(sc) sc.scrollTop=0;
+}
+function genreJump(big){
+  var idx=BIG_ORDER.indexOf(big);
+  var items=document.querySelectorAll('.cat-lnb .cat-item');
+  selectBig(items[idx], big);
+}
+function renderGenreChips(){
+  const bar=document.getElementById('genre-subbar');
+  if(!bar) return;
+  if(curBig==='all'){
+    bar.innerHTML='<button class="gchip on">전체</button>'+
+      BIG_ORDER.slice(1).map(k=>'<button class="gchip" onclick="genreJump(\''+k+'\')">'+GENRE_CATS[k].label+'</button>').join('');
+  } else {
+    const cat=GENRE_CATS[curBig];
+    let h='<button class="gchip'+(curSub==='전체'?' on':'')+'" onclick="pickSub(\'전체\',this)">전체</button>';
+    h+=cat.subs.map(s=>'<button class="gchip'+(curSub===s?' on':'')+'" onclick="pickSub(\''+s+'\',this)">'+s+'</button>').join('');
+    bar.innerHTML=h;
+  }
+}
+function pickSub(sub,el){
+  curSub=sub;
+  document.querySelectorAll('#genre-subbar .gchip').forEach(c=>c.classList.remove('on'));
+  if(el) el.classList.add('on');
+  renderGenreGrid();
+}
+function renderGenreGrid(){
+  const grid=document.getElementById('genre-grid');
+  const hd=document.getElementById('genre-hd-title');
+  const cnt=document.getElementById('genre-hd-count');
+  if(!grid) return;
+  let list;
+  if(curBig==='all') list=GENRE_BOOKS;
+  else if(curSub==='전체') list=GENRE_BOOKS.filter(b=>b.big===curBig);
+  else list=GENRE_BOOKS.filter(b=>b.big===curBig && b.sub===curSub);
+  if(hd) hd.textContent = curBig==='all' ? '전체' : (GENRE_CATS[curBig].label + (curSub!=='전체' ? ' › '+curSub : ''));
+  if(cnt) cnt.textContent='총 '+list.length+'권';
+  if(list.length===0){ grid.innerHTML='<p style="grid-column:1/-1;font-size:11px;color:var(--color-text-tertiary);padding:20px 0;text-align:center">아직 이 분야의 책이 없어요.</p>'; return; }
+  grid.innerHTML=list.map(b=>
+    '<div class="bg-item" onclick="openIntro()"><div class="bg-cover">'+b.e+'</div><p>'+b.t+'</p><span>'+b.sub+'</span></div>'
+  ).join('');
 }
 function stab(el){
   el.parentElement.querySelectorAll('.stab').forEach(t=>t.classList.remove('on'));
   el.classList.add('on');
 }
-const createPanels=['c-feed','c-mine','c-write','c-hall'];
-const shelfPanels=['shelf-dashboard','shelf-highlight','shelf-aptitude'];
+const createPanels=['c-feed','c-mine','c-write','c-hall','c-edit','c-resubmit'];
+const shelfPanels=['shelf-dashboard','shelf-highlight'];
 // ── 독서 취향 진단 ───────────────────────────
 const TASTE_NAME = '문연주';
 const tasteQuestions = [
@@ -2397,6 +2670,7 @@ function showTasteResult(){
     tbody.innerHTML='<div class="taste-result-mini"><div class="trm-emoji">'+r.emoji+'</div>'+
       '<div class="trm-info"><p>'+r.type+'</p><span>'+r.tagline+'</span></div></div>';
     tcard.style.display='block';
+    var cta=document.getElementById('taste-cta-btn'); if(cta) cta.style.display='none';
   }
 }
 function recordTab(id,el){
@@ -2486,7 +2760,7 @@ const CAREER_JOBS={
   ]}
 };
 function selectCareerJob(key,el){
-  document.querySelectorAll('#shelf-aptitude .job-btn').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('.da-eval .job-btn').forEach(b=>b.classList.remove('on'));
   if(el)el.classList.add('on');
   const job=CAREER_JOBS[key];
   if(!job)return;
@@ -2628,12 +2902,9 @@ function renderHomeRoad(){
 
 // 홈의 '설정' → 나의 독서 로드 설정으로 이동
 function goRoadSetup(){
-  switchTab(3);
-  shelfTab('aptitude', document.querySelectorAll('#shelf-subtabs .stab')[2]);
-  setTimeout(function(){
-    const el=document.querySelector('#shelf-aptitude .road-setup');
-    if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
-  },60);
+  switchTab(1);
+  var items=document.querySelectorAll('.cat-lnb .cat-item');
+  if(items.length) openRoad(items[items.length-1]); // 독서로드 = 마지막 메뉴
 }
 
 // 길(분야) 선택
@@ -2762,6 +3033,56 @@ function closeWritePanel(){
   createPanels.forEach(p=>{const e=document.getElementById(p);if(e)e.style.display='none'});
   document.getElementById('c-feed').style.display='block';
   document.querySelectorAll('#create-subtabs .stab')[0].classList.add('on');
+}
+
+/* ===== 미노출 글 수정 → 다시 승인 신청 ===== */
+function editHiddenPost(){
+  createPanels.forEach(p=>{const e=document.getElementById(p);if(e)e.style.display='none'});
+  document.getElementById('c-edit').style.display='block';
+  var g=document.querySelector('#c-edit .genre-btn.on');
+  renderEditHelp(g?g.getAttribute('data-genre'):'poem');
+  setTab(2);
+  var s=document.querySelector('#c-edit'); if(s)s.scrollTop=0;
+}
+const EDIT_HELP = {
+  novel: {label:'소설', tips:[
+    {e:'📖', t:'인물 · 사건 · 배경이 자연스럽게 이어지는지 처음부터 다시 읽어보며 흐름을 다듬어요.'},
+    {e:'💬', t:'장면이나 대화를 조금 더 구체적으로 그리면 이야기가 한층 생생해져요.'},
+    {e:'✨', t:'주제와 어울리는 내용인지, 너무 짧거나 같은 말이 반복되지 않는지 확인해요.'}
+  ]},
+  essay: {label:'수필', tips:[
+    {e:'✍️', t:'겪은 일과 그때 든 생각 · 감정이 잘 드러나는지 살펴봐요.'},
+    {e:'🌱', t:'"왜 그렇게 느꼈는지" 이유를 한 줄 덧붙이면 글이 더 깊어져요.'},
+    {e:'✨', t:'주제와 어울리는 내용인지, 너무 짧거나 같은 말이 반복되지 않는지 확인해요.'}
+  ]},
+  poem: {label:'시', tips:[
+    {e:'🎵', t:'짧은 말 속에 담고 싶은 마음이 잘 전해지는지 소리 내어 읽어봐요.'},
+    {e:'🌈', t:'떠오르는 장면이나 비유를 더하면 시의 느낌이 한층 풍부해져요.'},
+    {e:'✨', t:'주제와 어울리는 내용인지, 너무 짧거나 같은 말이 반복되지 않는지 확인해요.'}
+  ]}
+};
+function renderEditHelp(genre){
+  const data = EDIT_HELP[genre] || EDIT_HELP.poem;
+  const tag = document.getElementById('edit-help-genre');
+  if(tag) tag.textContent = data.label;
+  const body = document.getElementById('edit-help-body');
+  if(!body) return;
+  let h = data.tips.map(x=>
+    '<div style="display:flex;gap:7px;font-size:11px;color:#7C2D12;line-height:1.55"><span>'+x.e+'</span><span>'+x.t+'</span></div>'
+  ).join('');
+  h += '<div style="display:flex;gap:7px;font-size:11px;color:#7C2D12;line-height:1.55;border-top:0.5px solid #FED7AA;padding-top:9px;margin-top:2px"><span>✅</span><span>다듬은 뒤 <strong>다시 승인 신청</strong>을 누르면 선생님(관리자) 검토 후 게시돼요.</span></div>';
+  body.innerHTML = h;
+}
+function editSelectGenre(el){
+  document.querySelectorAll('#c-edit .genre-btn').forEach(b=>b.classList.remove('on'));
+  el.classList.add('on');
+  renderEditHelp(el.getAttribute('data-genre'));
+}
+function resubmitPost(){
+  createPanels.forEach(p=>{const e=document.getElementById(p);if(e)e.style.display='none'});
+  document.getElementById('c-resubmit').style.display='block';
+  setTab(2);
+  var s=document.querySelector('#c-resubmit'); if(s)s.scrollTop=0;
 }
 
 /* =====================================================================
@@ -3175,6 +3496,78 @@ function matIntroTab(id, el){
 
 try{ renderHall(); }catch(e){}
 try{ renderHomeRoad(); renderRoadHistory(); renderActiveLabel(); }catch(e){}
+try{ renderGenreChips(); renderGenreGrid(); }catch(e){}
+
+/* ===== 이달의 목표 설정 ===== */
+let monthlyGoal = 3;          // 현재 목표
+const monthlyDone = 1;        // 이번 달 완독 수 (프로토타입 고정)
+let goalDraft = 3;            // 팝업에서 편집 중인 값
+function openGoalModal(){
+  goalDraft = monthlyGoal;
+  document.getElementById('gm-num').textContent = goalDraft;
+  document.getElementById('gm-done').textContent = monthlyDone;
+  syncGoalPresets();
+  document.getElementById('goal-modal').style.display = 'flex';
+}
+function closeGoalModal(){ document.getElementById('goal-modal').style.display = 'none'; }
+function goalStep(d){
+  goalDraft = Math.max(1, Math.min(30, goalDraft + d));
+  document.getElementById('gm-num').textContent = goalDraft;
+  syncGoalPresets();
+}
+function goalPreset(n){
+  goalDraft = n;
+  document.getElementById('gm-num').textContent = goalDraft;
+  syncGoalPresets();
+}
+function syncGoalPresets(){
+  document.querySelectorAll('.gm-presets button').forEach(function(b){
+    b.classList.toggle('on', parseInt(b.textContent) === goalDraft);
+  });
+}
+function saveGoal(){
+  monthlyGoal = goalDraft;
+  renderGoal();
+  closeGoalModal();
+  showGoalToast();
+}
+function renderGoal(){
+  const done = monthlyDone, target = monthlyGoal;
+  const remain = Math.max(0, target - done);
+  const pct = Math.min(100, Math.round(done / target * 100));
+  const subTxt = remain > 0 ? (remain + '권 더 읽으면 달성!') : '목표를 달성했어요! 🎉';
+
+  // 대시보드 목표 카드
+  const t=document.getElementById('goal-target'); if(t)t.textContent=target;
+  const dn=document.getElementById('goal-done'); if(dn)dn.textContent=done;
+  const sub=document.getElementById('goal-sub'); if(sub)sub.textContent=subTxt;
+  const ring=document.getElementById('goal-card-ring'); if(ring)ring.setAttribute('stroke-dashoffset', (119.4*(1-pct/100)).toFixed(1));
+  const pc=document.getElementById('goal-card-pct'); if(pc)pc.textContent=pct+'%';
+
+  // 프로필 통계
+  const ps=document.getElementById('profile-goal-stat'); if(ps)ps.textContent=target+'권 / 월';
+
+  // 홈 화면 목표 카드
+  const ht=document.getElementById('home-goal-title'); if(ht)ht.textContent='이달의 독서 목표: '+target+'권';
+  const hs=document.getElementById('home-goal-sub'); if(hs)hs.textContent=done+'권 완독 · '+remain+'권 남음';
+  const hr=document.getElementById('home-goal-ring'); if(hr)hr.setAttribute('stroke-dashoffset', (113.1*(1-pct/100)).toFixed(1));
+  const hp=document.getElementById('home-goal-pct'); if(hp)hp.textContent=pct+'%';
+  const hb=document.getElementById('home-goal-bar'); if(hb)hb.style.width=pct+'%';
+}
+let goalToastTimer=null;
+function showGoalToast(){
+  let el=document.getElementById('goal-toast');
+  if(!el){
+    el=document.createElement('div'); el.id='goal-toast';
+    el.style.cssText='position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#1a1a1a;color:#fff;font-size:12px;font-weight:700;padding:11px 18px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.2);z-index:999;display:flex;align-items:center;gap:8px;font-family:inherit;opacity:0;transition:opacity .2s,bottom .2s;pointer-events:none';
+    document.body.appendChild(el);
+  }
+  el.innerHTML='<i class="ti ti-target" style="font-size:16px;color:#FCA5A5"></i>이달의 목표를 '+monthlyGoal+'권으로 설정했어요!';
+  requestAnimationFrame(function(){ el.style.opacity='1'; el.style.bottom='100px'; });
+  clearTimeout(goalToastTimer);
+  goalToastTimer=setTimeout(function(){ el.style.opacity='0'; el.style.bottom='90px'; }, 2400);
+}
+try{ renderGoal(); }catch(e){}
 
 // ── 오디오북 팝업 ───────────────────────────
 var abPlaying=false, abSpeedIdx=0;
